@@ -27,7 +27,7 @@ const CustomerList = () => {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/customers', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/customers', {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json'
@@ -101,8 +101,8 @@ const CustomerList = () => {
 
     try {
       const url = editingCustomer
-        ? `http://localhost:5000/api/customers/${editingCustomer._id}`
-        : 'http://localhost:5000/api/customers';
+        ? `https://customer-support-dashboard-backend-7ljw.onrender.com/api/customers/${editingCustomer._id}`
+        : 'https://customer-support-dashboard-backend-7ljw.onrender.com/api/customers';
       
       const method = editingCustomer ? 'PUT' : 'POST';
 
@@ -141,7 +141,7 @@ const CustomerList = () => {
 
   const confirmDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/customers/${deleteCustomerId}`, {
+      const response = await fetch(`https://customer-support-dashboard-backend-7ljw.onrender.com/api/customers/${deleteCustomerId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token,

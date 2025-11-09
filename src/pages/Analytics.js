@@ -37,7 +37,7 @@ const Analytics = () => {
       setError('');
 
       // Fetch overview
-      const overviewResponse = await fetch('http://localhost:5000/api/analytics/overview', {
+      const overviewResponse = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/analytics/overview', {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ const Analytics = () => {
 
       // Fetch messages per customer
       const messagesPerCustomerResponse = await fetch(
-        'http://localhost:5000/api/analytics/messages-per-customer',
+        'https://customer-support-dashboard-backend-7ljw.onrender.com/api/analytics/messages-per-customer',
         {
           headers: {
             'Authorization': token,
@@ -71,7 +71,7 @@ const Analytics = () => {
 
       // Fetch messages over time
       const messagesOverTimeResponse = await fetch(
-        'http://localhost:5000/api/analytics/messages-over-time',
+        'https://customer-support-dashboard-backend-7ljw.onrender.com/api/analytics/messages-over-time',
         {
           headers: {
             'Authorization': token,

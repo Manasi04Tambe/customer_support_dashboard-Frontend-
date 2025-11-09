@@ -25,7 +25,7 @@ const Chat = () => {
   // Initialize Socket.io connection
   useEffect(() => {
     if (token) {
-      const newSocket = io('http://localhost:5000', {
+      const newSocket = io('https://customer-support-dashboard-backend-7ljw.onrender.com', {
         auth: {
           token: token
         }
@@ -144,7 +144,7 @@ const Chat = () => {
   const fetchConversations = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/chat/conversations', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/chat/conversations', {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json'
@@ -172,7 +172,7 @@ const Chat = () => {
 
   const fetchMessages = async (customerId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/chat/messages/${customerId}`, {
+      const response = await fetch(`https://customer-support-dashboard-backend-7ljw.onrender.com/api/chat/messages/${customerId}`, {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json'
@@ -218,7 +218,7 @@ const Chat = () => {
 
   const handleStartChat = async (customerId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/chat/start/${customerId}`, {
+      const response = await fetch(`https://customer-support-dashboard-backend-7ljw.onrender.com/api/chat/start/${customerId}`, {
         method: 'POST',
         headers: {
           'Authorization': token,
@@ -288,7 +288,7 @@ const Chat = () => {
       formData.append('customerId', selectedCustomer._id);
       formData.append('message', message || '');
 
-      const response = await fetch('http://localhost:5000/api/chat/upload', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/chat/upload', {
         method: 'POST',
         headers: {
           'Authorization': token
@@ -391,7 +391,7 @@ const Chat = () => {
   const renderFilePreview = (msg) => {
     if (!msg.fileUrl) return null;
 
-    const fileUrl = `http://localhost:5000${msg.fileUrl}`;
+    const fileUrl = `https://customer-support-dashboard-backend-7ljw.onrender.com${msg.fileUrl}`;
 
     if (msg.fileType === 'image') {
       return (

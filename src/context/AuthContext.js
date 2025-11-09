@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUserProfile = async (tokenToUse) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/me', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/auth/me', {
         headers: {
           'Authorization': tokenToUse,
           'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       console.log('Attempting login for:', email);
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error('Login error:', error);
       if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-        return { success: false, message: 'Cannot connect to server. Make sure the backend is running on http://localhost:5000' };
+        return { success: false, message: 'Cannot connect to server. Make sure the backend is running on https://customer-support-dashboard-backend-7ljw.onrender.com' };
       }
       return { success: false, message: 'Network error. Please try again.' };
     }
@@ -97,7 +97,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password) => {
     try {
       console.log('Attempting registration for:', email);
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error('Register error:', error);
       if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-        return { success: false, message: 'Cannot connect to server. Make sure the backend is running on http://localhost:5000' };
+        return { success: false, message: 'Cannot connect to server. Make sure the backend is running on https://customer-support-dashboard-backend-7ljw.onrender.com' };
       }
       return { success: false, message: 'Network error. Please try again.' };
     }

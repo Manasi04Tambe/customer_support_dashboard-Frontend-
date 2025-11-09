@@ -16,7 +16,7 @@ const DashboardLayout = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/me', {
+      const response = await fetch('https://customer-support-dashboard-backend-7ljw.onrender.com/api/auth/me', {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json'
